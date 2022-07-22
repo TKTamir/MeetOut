@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage src",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -51,6 +51,8 @@
     ]
   },
   "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "enzyme": "^3.11.0",
     "gh-pages": "^4.0.0"
   }
 }
