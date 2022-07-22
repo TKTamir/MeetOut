@@ -82,5 +82,7 @@ let mockData = [
     eventType: 'default',
   },
 ];
+
+//Conver JSON to JavaScript
 mockData = JSON.parse(JSON.stringify(mockData));
 export { mockData };
