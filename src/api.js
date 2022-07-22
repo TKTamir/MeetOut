@@ -9,22 +9,20 @@ export const extractLocations = (events) => {
 };
 
 const getToken = async (code) => {
-  try {
-    const encodeCode = encodeURIComponent(code);
+  const encodeCode = encodeURIComponent(code);
+  const { access_token } = await fetch(
+    'https://d7s8uvpn30.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + encodeCode
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => error);
 
-    const response = await fetch(
-      'https://d7s8uvpn30.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const { access_token } = await response.json();
-    access_token && localStorage.setItem('access_token', access_token);
-    return access_token;
-  } catch (error) {
-    error.json();
-  }
+  access_token && localStorage.setItem('access_token', access_token);
+
+  return access_token;
 };
+
 const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
@@ -56,7 +54,7 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      'https://d7s8uvpn30.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
+      'https://d7s8uvpn30.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
