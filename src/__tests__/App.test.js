@@ -64,4 +64,20 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+  test('"NumberOfEvents" state is passed by App as a prop to NumberOfEvents component', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
+    expect(AppNumberOfEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberOfEventsState);
+    AppWrapper.unmount();
+  });
+  test('get list of events matching the number of events inputted by the user', async () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    const selecetedNumber = Math.floor(Math.random() * 32);
+    const events = { target: { value: selecetedNumber } };
+    await NumberOfEventsWrapper.find('#events-num-input').simulate('change', events);
+    expect(AppWrapper.state('numberOfEvents')).toEqual(selecetedNumber);
+    AppWrapper.unmount();
+  });
 });
