@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MeetOut/static/css/main.ccbfce6c.css",
-    "main.js": "/MeetOut/static/js/main.59e248ea.js",
-    "static/js/787.4b564826.chunk.js": "/MeetOut/static/js/787.4b564826.chunk.js",
-    "service-worker.js": "/MeetOut/service-worker.js",
-    "index.html": "/MeetOut/index.html",
-    "main.ccbfce6c.css.map": "/MeetOut/static/css/main.ccbfce6c.css.map",
-    "main.59e248ea.js.map": "/MeetOut/static/js/main.59e248ea.js.map",
-    "787.4b564826.chunk.js.map": "/MeetOut/static/js/787.4b564826.chunk.js.map"
+    "main.css": "/meetout/static/css/main.ccbfce6c.css",
+    "main.js": "/meetout/static/js/main.d4bdef7a.js",
+    "static/js/787.4b564826.chunk.js": "/meetout/static/js/787.4b564826.chunk.js",
+    "service-worker.js": "/meetout/service-worker.js",
+    "index.html": "/meetout/index.html",
+    "main.ccbfce6c.css.map": "/meetout/static/css/main.ccbfce6c.css.map",
+    "main.d4bdef7a.js.map": "/meetout/static/js/main.d4bdef7a.js.map",
+    "787.4b564826.chunk.js.map": "/meetout/static/js/787.4b564826.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ccbfce6c.css",
-    "static/js/main.59e248ea.js"
+    "static/js/main.d4bdef7a.js"
   ]
 }
