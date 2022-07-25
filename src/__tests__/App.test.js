@@ -6,7 +6,7 @@ import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents';
 import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
-import { getCalendarEvents } from '../../auth-server/handler';
+// import { getCalendarEvents } from '../../auth-server/handler';
 
 //Unit testing
 describe('<App /> component', () => {
@@ -74,10 +74,10 @@ describe('<App /> integration', () => {
   test('get list of events matching the number of events inputted by the user', async () => {
     const AppWrapper = mount(<App />);
     const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-    const selecetedNumber = Math.floor(Math.random() * 32);
-    const events = { target: { value: selecetedNumber } };
+    const selectedNumber = Math.floor(Math.random() * 32);
+    const events = { target: { value: selectedNumber } };
     await NumberOfEventsWrapper.find('#events-num-input').simulate('change', events);
-    expect(AppWrapper.state('numberOfEvents')).toEqual(selecetedNumber);
+    expect(AppWrapper.state('numberOfEvents')).toEqual(selectedNumber);
     AppWrapper.unmount();
   });
 });

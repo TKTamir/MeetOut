@@ -21,7 +21,9 @@ class Event extends Component {
         <p className="event-about"></p>
         {this.state.showDetails && <div className="event-details">{event.description}</div>}
 
-        <button className="event-toggle-btn" onClick={this.handleItemToggled}></button>
+        <button className="event-toggle-btn" onClick={this.handleItemToggled}>
+          Details
+        </button>
       </div>
     );
   }

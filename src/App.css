@@ -207,11 +207,46 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
+/* My styling */
 
+.event-list {
+  display: grid;
+  -ms-grid-column: 1fr 1fr;
+  grid-column: 1fr 1fr;
+}
+
+.event-toggle-btn {
+  background-color: #b4c3f1;
+}
+
+/*Responsive web page settings*/
+@media all and (max-width:500px) {
+  .event-list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Responsive media query */
+@media all and (min-width: 501px) and (max-width: 750px) {
+  .event-list {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 751px) {
+  .event-list {
+    grid-gap: 10px;
+  }
+
+}
 
 @media only screen and (min-width: 992px) {
-  .data-vis-wrapper {
-    flex-direction: row;
+  .event-list {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .data-vis-wrapper .recharts-responsive-container {
